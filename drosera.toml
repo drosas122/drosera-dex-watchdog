@@ -1,16 +1,1 @@
-name = "drosera-dex-watchdog"
-description = "An on-chain monitoring system on Drosera that detects and logs suspicious DEX activities such as price manipulation, rug pulls, and honeypots using smart contracts and Node.js scripts."
 
-[runtime]
-network = "drosera"
-trigger = "manual"
-
-[contracts]
-trap = "0x676F58BB94b5487c6ceA03Ed0A39F30b38680e7e"
-
-[commands]
-
-[commands.reportSwap]
-description = "Report a suspicious swap event"
-arguments = ["tokenIn", "tokenOut", "amountIn", "amountOut", "wallet"]
-handler = "node scripts/reportSwap.js"
